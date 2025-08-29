@@ -1,0 +1,16 @@
+stages:
+  data_load:
+    cmd: python data_loader.py
+    deps:
+      - data_loader.py
+      - "Asthma Risk & Severity Dataset.csv" 
+    outs:
+      - data
+
+  train:
+    cmd: python train_model.py
+    deps:
+      - train_model.py
+      - data
+    outs:
+      - models
