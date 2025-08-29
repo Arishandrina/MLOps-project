@@ -17,4 +17,6 @@ __pycache__/
 !/data/.gitkeep
 !/models/.gitkeep
 
+/Asthma Risk & Severity Dataset.csv
+
 *.png
