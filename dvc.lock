@@ -1,0 +1,37 @@
+schema: '2.0'
+stages:
+  data_load:
+    cmd: python data_loader.py
+    deps:
+    - path: Asthma Risk & Severity Dataset.csv
+      hash: md5
+      md5: 218a5473a5ea6c8f4b16c076c10c6555
+      size: 975168
+    - path: data_loader.py
+      hash: md5
+      md5: e6dfead10d822ae705610dd6d9ed0383
+      size: 2774
+    outs:
+    - path: data
+      hash: md5
+      md5: 595a82814d24e6a86af385abc064d67d.dir
+      size: 2380684
+      nfiles: 5
+  train:
+    cmd: python train_model.py
+    deps:
+    - path: data
+      hash: md5
+      md5: 595a82814d24e6a86af385abc064d67d.dir
+      size: 2380684
+      nfiles: 5
+    - path: train_model.py
+      hash: md5
+      md5: 1ba86541337728e344146dae89b4ab79
+      size: 5934
+    outs:
+    - path: models
+      hash: md5
+      md5: 915f3395135414fa171c91f9b6ff9056.dir
+      size: 2907879
+      nfiles: 4
